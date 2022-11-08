@@ -33,11 +33,15 @@ public class WordCountDriver {
         job.setOutputKeyClass(Text.class);
         job.setOutputValueClass(IntWritable.class);
 
+//        job.setCombinerClass(WordCountCombiner.class);
+//        job.setNumReduceTasks(0);
+        job.setCombinerClass(WordCountReducer.class);
+
         // 6 设置输入和输出路径
 //		FileInputFormat.setInputPaths(job, new Path(args[0]));
 //		FileOutputFormat.setOutputPath(job, new Path(args[1]));
-        FileInputFormat.setInputPaths(job, new Path("D:\\input"));
-        FileOutputFormat.setOutputPath(job, new Path("D:\\output"));
+        FileInputFormat.setInputPaths(job, new Path("inputword"));
+        FileOutputFormat.setOutputPath(job, new Path("./output4"));
 
         // 7 提交job
         boolean result = job.waitForCompletion(true);
