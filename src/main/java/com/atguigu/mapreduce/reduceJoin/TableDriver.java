@@ -24,8 +24,8 @@ public class TableDriver {
         job.setOutputKeyClass(TableBean.class);
         job.setOutputValueClass(NullWritable.class);
 
-        FileInputFormat.setInputPaths(job, new Path("D:\\input"));
-        FileOutputFormat.setOutputPath(job, new Path("D:\\output"));
+        FileInputFormat.setInputPaths(job, new Path("./input/inputtable"));
+        FileOutputFormat.setOutputPath(job, new Path("./output8"));
 
         boolean b = job.waitForCompletion(true);
         System.exit(b ? 0 : 1);

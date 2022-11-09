@@ -33,7 +33,7 @@ public class TableMapper extends Mapper<LongWritable,Text, Text,TableBean> {
             outK.set(split[1]);
             outV.setId(split[0]);
             outV.setPid(split[1]);
-            outV.setAmount(Integer.parseInt(split[0]));
+            outV.setAmount(Integer.parseInt(split[2]));
             outV.setPname("");
             outV.setFlag("order");
         }else{
